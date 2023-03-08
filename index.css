@@ -12,7 +12,7 @@
 .wrapper {
   width: 372px;
   margin: auto;
-  min-height: 455px;
+  min-height: 460px;
   box-shadow: 0 8px 50px -7px black;
   background: #202020;
   border-radius: 12px;
@@ -24,14 +24,14 @@
 }
 
 #calc-operation {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   text-align: right;
   color: #727b86;
   padding-bottom: 0.5rem;
 }
 
 #calc-typed {
-  font-size: 2rem;
+  font-size: 2.4rem;
   text-align: right;
   color: #fff;
 }
