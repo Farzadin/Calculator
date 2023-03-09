@@ -10,6 +10,7 @@ const NumberButtons = document.querySelectorAll(".num");
 const clearButton = document.querySelector(".clear");
 const deleteButton = document.querySelector(".remove");
 const equalButton = document.querySelector(".equal");
+const pointButton = document.querySelector(".point");
 
 NumberButtons.forEach((numberButton) => {
   numberButton.addEventListener("click", addNumberIntoScreen);
@@ -22,11 +23,19 @@ operatorButtons.forEach((operatorButton) => {
 clearButton.addEventListener("click", clearScreen);
 deleteButton.addEventListener("click", DeleteLatestInput);
 equalButton.addEventListener("click", evaluate);
+pointButton.addEventListener("click", addDecimalIntoScreen);
+
+function addDecimalIntoScreen(e) {
+  const newDecimal = e.target.textContent;
+  if (!currentValueElem.textContent.includes(".")) {
+    currentValueElem.textContent += newDecimal;
+  }
+}
 
 function evaluate() {
-  if (operator === "") return;
+  if (operator === "") return null;
   secondOperand = currentValueElem.textContent;
-  previousValueElem.textContent = `${secondOperand} ${operator} ${firstOperand} ${equalButton.textContent}`;
+  previousValueElem.textContent = `${firstOperand} ${operator} ${secondOperand} ${equalButton.textContent}`;
   let result = operate(operator, firstOperand, secondOperand);
   currentValueElem.textContent = result;
   resetFlag = true;
@@ -37,9 +46,11 @@ function addNumberIntoScreen(event) {
     previousValueElem.textContent = "";
     resetCurrentValueElem();
   }
+
   const newInput = event.target.textContent;
 
-  if (currentValueElem.textContent == 0 || resetFlag) resetCurrentValueElem();
+  if (currentValueElem.textContent === "0" || resetFlag)
+    resetCurrentValueElem();
   currentValueElem.textContent += newInput;
 }
 
@@ -49,8 +60,6 @@ function addOperatorIntoScreen(event) {
   operator = newOperator;
   previousValueElem.textContent = `${firstOperand} ${newOperator}`;
   resetFlag = true;
-  console.log(firstOperand);
-  console.log(operator);
 }
 
 function resetCurrentValueElem() {
@@ -59,6 +68,9 @@ function resetCurrentValueElem() {
 }
 
 function clearScreen() {
+  firstOperand = "";
+  secondOperand = "";
+  operator = "";
   currentValueElem.textContent = "0";
   previousValueElem.textContent = "";
 }
