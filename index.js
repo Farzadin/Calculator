@@ -34,37 +34,27 @@ function addDecimalIntoScreen(e) {
 
 function evaluate() {
   if (operator === "") return null;
-  if (operator === "÷") {
-    previousValueElem.textContent = `${firstOperand} ${operator} ${secondOperand} ${equalButton.textContent}`;
-  }
   secondOperand = currentValueElem.textContent;
-  previousValueElem.textContent = `${secondOperand} ${operator} ${firstOperand} ${equalButton.textContent}`;
+  previousValueElem.textContent = `${firstOperand} ${operator} ${secondOperand} ${equalButton.textContent}`;
   let result = operate(operator, firstOperand, secondOperand);
-  if (!result) {
-    currentValueElem.textContent = "0";
-  } else {
-    currentValueElem.textContent = result;
-  }
+  currentValueElem.textContent = result;
   resetFlag = true;
 }
 
 function addNumberIntoScreen(event) {
-  // if (previousValueElem.textContent.includes("=")) {
-  //   previousValueElem.textContent = "";
-  //   resetCurrentValueElem();
-  // }
+  if (previousValueElem.textContent.includes("=")) {
+    previousValueElem.textContent = "";
+    resetCurrentValueElem();
+  }
 
   const newInput = event.target.textContent;
-  if (currentValueElem.textContent === "0" || resetFlag) {
-    currentValueElem.textContent = newInput;
-    resetFlag = false;
-  } else {
-    currentValueElem.textContent += newInput;
-  }
+
+  if (currentValueElem.textContent === "0" || resetFlag)
+    resetCurrentValueElem();
+  currentValueElem.textContent += newInput;
 }
 
 function addOperatorIntoScreen(event) {
-  if (firstOperand && operator) evaluate();
   const newOperator = event.target.textContent;
   firstOperand = currentValueElem.textContent;
   operator = newOperator;
@@ -73,7 +63,7 @@ function addOperatorIntoScreen(event) {
 }
 
 function resetCurrentValueElem() {
-  currentValueElem.textContent = "0";
+  currentValueElem.textContent = "";
   resetFlag = false;
 }
 
