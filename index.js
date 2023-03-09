@@ -1,3 +1,8 @@
+let firstOperand = "";
+let operator = "";
+let secondOperand = "";
+let resetFlag = false;
+
 const currentValueElem = document.querySelector(".currentvalue");
 const previousValueElem = document.querySelector(".previousvalue");
 const operatorButtons = document.querySelectorAll(".opt");
@@ -9,17 +14,33 @@ NumberButtons.forEach((numberButton) => {
   numberButton.addEventListener("click", addNumberIntoScreen);
 });
 
+operatorButtons.forEach((operatorButton) => {
+  operatorButton.addEventListener("click", addOperatorIntoScreen);
+});
+
 clearButton.addEventListener("click", clearScreen);
 deleteButton.addEventListener("click", DeleteLatestInput);
 
 function addNumberIntoScreen(event) {
   const newInput = event.target.textContent;
 
-  if (currentValueElem.textContent == 0) {
-    currentValueElem.textContent = newInput;
-  } else {
-    currentValueElem.textContent += newInput;
-  }
+  if (currentValueElem.textContent == 0 || resetFlag) resetCurrentValueElem();
+  currentValueElem.textContent += newInput;
+}
+
+function addOperatorIntoScreen(event) {
+  const newOperator = event.target.textContent;
+  firstOperand = currentValueElem.textContent;
+  operator = newOperator;
+  previousValueElem.textContent = `${firstOperand} ${newOperator}`;
+  resetFlag = true;
+  console.log(firstOperand);
+  console.log(operator);
+}
+
+function resetCurrentValueElem() {
+  currentValueElem.textContent = "";
+  resetFlag = false;
 }
 
 function clearScreen() {
