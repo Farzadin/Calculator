@@ -1,6 +1,11 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #140f16;
 }
 
 /* header */
@@ -14,7 +19,7 @@
   margin: auto;
   min-height: 424px;
   box-shadow: 0 8px 50px -7px black;
-  background: #202020;
+  background: #251e20;
   border-radius: 12px;
 }
 
@@ -31,7 +36,7 @@
   margin-bottom: 60px;
   margin-right: 20px;
   font-size: 1.4rem;
-  color: #a1a1a1;
+  color: #9f9c9d;
   padding-bottom: 0.5rem;
 }
 
@@ -60,46 +65,59 @@ button {
   width: 87px;
   height: 58px;
   border-radius: 8px;
-  color: #ffffff;
-  background-color: #3c3c3c;
   font-size: 1.3rem;
-  opacity: 0.8;
   border: 1px solid #202020;
+  color: #eae8e9;
 }
 
-button:hover {
-  background-color: #323232;
+.num {
+  background-color: #383034;
+}
+
+.point {
+  background-color: #383034;
 }
 
 .opt {
-  background-color: #323232;
+  background-color: #41393d;
   font-size: 1.6rem;
 }
 
-.opt:hover {
-  background-color: #3c3c3c;
-}
-
 .equal {
-  background-color: #dd765d;
+  background-color: #de765d;
   color: #202020;
   opacity: 1;
 }
 
-.equal:hover {
-  background-color: #dd775dce;
-}
-
 .clear,
 .remove {
-  background-color: #323232;
+  background-color: #41393d;
   font-size: 0.9rem;
   width: 178px;
 }
 
-.clear:hover {
-  background-color: #3c3c3c;
+/* hover effects */
+
+.num:hover {
+  background-color: #41393d;
 }
+
+.point:hover {
+  background-color: #41393d;
+}
+
+.opt:hover {
+  background-color: #383034;
+}
+
+.equal:hover {
+  background-color: #dd775ddf;
+}
+
 .remove:hover {
-  background-color: #3c3c3c;
+  background-color: #383034;
+}
+
+.clear:hover {
+  background-color: #383034;
 }
