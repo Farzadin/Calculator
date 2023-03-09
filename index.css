@@ -29,7 +29,7 @@ body {
   height: 120px;
 }
 
-#calc-operation {
+.previousvalue {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -40,7 +40,7 @@ body {
   padding-bottom: 0.5rem;
 }
 
-#calc-typed {
+.currentvalue {
   position: absolute;
   bottom: 0;
   right: 0;
