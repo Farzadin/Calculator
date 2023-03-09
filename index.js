@@ -1,7 +1,3 @@
-let itemArray = [];
-let newNumberFlag = false;
-
-const equationArray = [];
 const currentValueElem = document.querySelector(".currentvalue");
 const previousValueElem = document.querySelector(".previousvalue");
 const operatorButtons = document.querySelectorAll(".opt");
@@ -19,21 +15,16 @@ deleteButton.addEventListener("click", DeleteLatestInput);
 function addNumberIntoScreen(event) {
   const newInput = event.target.textContent;
 
-  if (newNumberFlag) {
+  if (currentValueElem.textContent == 0) {
     currentValueElem.textContent = newInput;
-    newNumberFlag = false;
   } else {
-    currentValueElem.textContent =
-      currentValueElem.textContent == 0
-        ? newInput
-        : `${currentValueElem.textContent}${newInput}`;
+    currentValueElem.textContent += newInput;
   }
 }
 
 function clearScreen() {
   currentValueElem.textContent = "0";
   previousValueElem.textContent = "";
-  itemArray = [];
 }
 
 function DeleteLatestInput() {
