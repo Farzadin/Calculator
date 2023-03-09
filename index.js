@@ -1,3 +1,39 @@
+let itemArray = [];
+let newNumberFlag = false;
+
+const equationArray = [];
+const currentValueElem = document.querySelector(".currentvalue");
+const previousValueElem = document.querySelector(".previousvalue");
+const NumberButtons = document.querySelectorAll(".num");
+const clearButton = document.querySelector(".clear");
+const deleteButton = document.querySelector(".remove");
+
+NumberButtons.forEach((numberButton) => {
+  numberButton.addEventListener("click", updateCurrentValue);
+});
+
+clearButton.addEventListener("click", clear);
+
+function updateCurrentValue(event) {
+  const newInput = event.target.textContent;
+
+  if (newNumberFlag) {
+    currentValueElem.textContent = newInput;
+    newNumberFlag = false;
+  } else {
+    currentValueElem.textContent =
+      currentValueElem.textContent == 0
+        ? newInput
+        : `${currentValueElem.textContent}${newInput}`;
+  }
+}
+
+function clear(event) {
+  currentValueElem.textContent = "0";
+  previousValueElem.textContent = "";
+  itemArray = [];
+}
+
 function add(a, b) {
   return a + b;
 }
