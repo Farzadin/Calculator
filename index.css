@@ -12,7 +12,7 @@
 .wrapper {
   width: 372px;
   margin: auto;
-  min-height: 462px;
+  min-height: 424px;
   box-shadow: 0 8px 50px -7px black;
   background: #202020;
   border-radius: 12px;
@@ -20,17 +20,27 @@
 
 /*Calculator Display Screen*/
 .calc-screen {
-  padding: 2.5rem;
+  position: relative;
+  height: 120px;
 }
 
 #calc-operation {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 60px;
+  margin-right: 20px;
   font-size: 1.4rem;
-  text-align: right;
-  color: #727b86;
+  color: #a1a1a1;
   padding-bottom: 0.5rem;
 }
 
 #calc-typed {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 15px;
+  margin-bottom: 15px;
   font-size: 2.4rem;
   font-weight: bold;
   text-align: right;
