@@ -4,17 +4,19 @@ let newNumberFlag = false;
 const equationArray = [];
 const currentValueElem = document.querySelector(".currentvalue");
 const previousValueElem = document.querySelector(".previousvalue");
+const operatorButtons = document.querySelectorAll(".opt");
 const NumberButtons = document.querySelectorAll(".num");
 const clearButton = document.querySelector(".clear");
 const deleteButton = document.querySelector(".remove");
 
 NumberButtons.forEach((numberButton) => {
-  numberButton.addEventListener("click", updateCurrentValue);
+  numberButton.addEventListener("click", addNumberIntoScreen);
 });
 
-clearButton.addEventListener("click", clear);
+clearButton.addEventListener("click", clearScreen);
+deleteButton.addEventListener("click", DeleteLatestInput);
 
-function updateCurrentValue(event) {
+function addNumberIntoScreen(event) {
   const newInput = event.target.textContent;
 
   if (newNumberFlag) {
@@ -28,10 +30,14 @@ function updateCurrentValue(event) {
   }
 }
 
-function clear(event) {
+function clearScreen() {
   currentValueElem.textContent = "0";
   previousValueElem.textContent = "";
   itemArray = [];
+}
+
+function DeleteLatestInput() {
+  currentValueElem.textContent = currentValueElem.textContent.slice(0, -1);
 }
 
 function add(a, b) {
