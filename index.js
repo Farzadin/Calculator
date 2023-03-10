@@ -34,6 +34,9 @@ function addDecimalIntoScreen(e) {
 
 function evaluate() {
   if (operator === "") return null;
+  if (operator === "÷" && currentValueElem.textContent == "0")
+    alert("cant divide by zero");
+
   secondOperand = currentValueElem.textContent;
   previousValueElem.textContent = `${firstOperand} ${operator} ${secondOperand} =`;
   currentValueElem.textContent = operate(operator, firstOperand, secondOperand);
