@@ -59,6 +59,7 @@ function addNumberIntoScreen(event) {
 }
 
 function addOperatorIntoScreen(event) {
+  if (operator !== "") evaluate();
   const newOperator = event.target.textContent;
   firstOperand = currentValueElem.textContent;
   operator = newOperator;
