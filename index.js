@@ -35,10 +35,14 @@ function addDecimalIntoScreen(e) {
 function evaluate() {
   if (operator === "") return null;
   secondOperand = currentValueElem.textContent;
-  previousValueElem.textContent = `${firstOperand} ${operator} ${secondOperand} ${equalButton.textContent}`;
-  let result = operate(operator, firstOperand, secondOperand);
-  currentValueElem.textContent = result;
+  previousValueElem.textContent = `${firstOperand} ${operator} ${secondOperand} =`;
+  currentValueElem.textContent = operate(operator, firstOperand, secondOperand);
+
   resetFlag = true;
+  operator = "";
+  console.log(firstOperand);
+  console.log(operator);
+  console.log(secondOperand);
 }
 
 function addNumberIntoScreen(event) {
