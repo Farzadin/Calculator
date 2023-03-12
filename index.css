@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +8,7 @@
 
 body {
   background-color: #140f16;
+  font-family: "Roboto Mono", monospace, sans-serif;
 }
 
 /* header */
@@ -70,14 +73,15 @@ footer {
   padding: 40px;
 }
 
+/* Buttons */
 button {
-  width: 87px;
-  height: 58px;
+  width: 84px;
+  height: 57.9px;
   border-radius: 8px;
   font-size: 1.3rem;
   border: 1px solid #202020;
   color: #eae8e9;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .num {
