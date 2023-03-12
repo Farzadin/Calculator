@@ -61,6 +61,16 @@ body {
   gap: 1.2px 0;
 }
 
+/* footer */
+footer {
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  padding: 40px;
+}
+
 button {
   width: 87px;
   height: 58px;
@@ -68,6 +78,7 @@ button {
   font-size: 1.3rem;
   border: 1px solid #202020;
   color: #eae8e9;
+  font-weight: 700;
 }
 
 .num {
