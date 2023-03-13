@@ -68,10 +68,10 @@ button {
   width: 84px;
   height: 57.9px;
   border-radius: 8px;
-  font-size: 1.3rem;
+  font-size: 130%;
   border: 1px solid #202020;
   color: #eae8e9;
-  font-weight: 400;
+  font-family: inherit;
 }
 
 .num {
@@ -84,7 +84,7 @@ button {
 
 .opt {
   background-color: #41393d;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
 }
 
 .equal {
@@ -96,7 +96,7 @@ button {
 .clear,
 .remove {
   background-color: #41393d;
-  font-size: 0.9rem;
+  font-size: 100%;
   width: 178px;
 }
 
