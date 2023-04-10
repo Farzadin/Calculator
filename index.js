@@ -1,3 +1,5 @@
+/* eslint-disable no-alert */
+/* eslint-disable no-param-reassign */
 let firstOperand = '';
 let operator = '';
 let secondOperand = '';
@@ -35,7 +37,7 @@ function clearScreen() {
   previousValueElem.textContent = '';
 }
 
-function DeleteLatestInput() {
+function deleteLatestInput() {
   currentValueElem.textContent = currentValueElem.textContent.slice(0, -1);
 }
 
@@ -117,6 +119,6 @@ operatorButtons.forEach((operatorButton) => {
 });
 
 clearButton.addEventListener('click', clearScreen);
-deleteButton.addEventListener('click', DeleteLatestInput);
+deleteButton.addEventListener('click', deleteLatestInput);
 equalButton.addEventListener('click', evaluate);
 pointButton.addEventListener('click', addDecimalIntoScreen);
