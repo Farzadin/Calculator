@@ -29,6 +29,8 @@ function addDecimalIntoScreen(e) {
   const newDecimal = e.target.textContent;
   if (!currentValueElem.textContent.includes(".")) {
     currentValueElem.textContent += newDecimal;
+    resetFlag = false
+
   }
 }
 
