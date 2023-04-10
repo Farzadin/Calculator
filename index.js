@@ -6,7 +6,7 @@ let resetFlag = false;
 const currentValueElem = document.querySelector('.currentvalue');
 const previousValueElem = document.querySelector('.previousvalue');
 const operatorButtons = document.querySelectorAll('.opt');
-const NumberButtons = document.querySelectorAll('.num');
+const numberButtons = document.querySelectorAll('.num');
 const clearButton = document.querySelector('.clear');
 const deleteButton = document.querySelector('.remove');
 const equalButton = document.querySelector('.equal');
@@ -108,7 +108,7 @@ function addNumberIntoScreen(event) {
   currentValueElem.textContent += newInput;
 }
 
-NumberButtons.forEach((numberButton) => {
+numberButtons.forEach((numberButton) => {
   numberButton.addEventListener('click', addNumberIntoScreen);
 });
 
