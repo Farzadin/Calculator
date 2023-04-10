@@ -109,14 +109,6 @@ function addNumberIntoScreen(event) {
   currentValueElem.textContent += newInput;
 }
 
-numberButtons.forEach((numberButton) => {
-  numberButton.addEventListener('click', addNumberIntoScreen);
-});
-
-operatorButtons.forEach((operatorButton) => {
-  operatorButton.addEventListener('click', addOperatorIntoScreen);
-});
-
 function handleKeyDown(event) {
   // Map keyboard keys to calculator functions
   const numberButton = document.querySelector(
@@ -179,6 +171,14 @@ function handleKeyDown(event) {
       break;
   }
 }
+
+numberButtons.forEach((numberButton) => {
+  numberButton.addEventListener('click', addNumberIntoScreen);
+});
+
+operatorButtons.forEach((operatorButton) => {
+  operatorButton.addEventListener('click', addOperatorIntoScreen);
+});
 
 clearButton.addEventListener('click', clearScreen);
 deleteButton.addEventListener('click', deleteLatestInput);
